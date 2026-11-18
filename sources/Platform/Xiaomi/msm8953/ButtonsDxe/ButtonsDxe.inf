@@ -1,0 +1,37 @@
+## @file
+#  Minimal GPIO button (Volume Up) driver for Xiaomi Redmi Note 4X (mido)
+#
+#  Exposes EFI_SIMPLE_TEXT_INPUT_PROTOCOL backed by TLMM GPIO 85.
+#  Short press -> Down arrow, long press (>=800ms) -> Enter.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = ButtonsDxe
+  FILE_GUID                      = 5f3a7c21-9b4e-4d6a-8f27-1c0e5b9d3a44
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ButtonsDxeEntryPoint
+
+[Sources]
+  ButtonsDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  TimerLib
+  DebugLib
+  IoLib
+  BaseLib
+  BaseMemoryLib
+
+[Protocols]
+  gEfiSimpleTextInProtocolGuid
+
+[Depex]
+  TRUE

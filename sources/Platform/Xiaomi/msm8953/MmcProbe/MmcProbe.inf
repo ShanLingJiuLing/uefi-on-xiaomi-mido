@@ -1,0 +1,29 @@
+## @file
+#  MmcProbe - eMMC bring-up diagnostic application.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MmcProbe
+  FILE_GUID                      = 4b7e2d19-8c63-4a52-b1f0-6d9a3c5e7b28
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  MmcProbe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  BaseMemoryLib
+  MemoryAllocationLib
+
+[Protocols]
+  gEfiSdMmcPassThruProtocolGuid
+  gEfiBlockIoProtocolGuid

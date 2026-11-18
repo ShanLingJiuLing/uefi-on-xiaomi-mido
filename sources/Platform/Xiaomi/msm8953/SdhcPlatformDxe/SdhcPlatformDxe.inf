@@ -1,0 +1,28 @@
+## @file
+#  Register the MSM8953 SDCC1 SDHCI controller as a non-discoverable device.
+#
+#  SPDX-License-Identifier: BSD-2-Clause-Patent
+##
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = SdhcPlatformDxe
+  FILE_GUID                      = c1d9a4e7-2b53-4f18-9a06-73e2d5b8c410
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = SdhcPlatformDxeEntryPoint
+
+[Sources]
+  SdhcPlatformDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  NonDiscoverableDeviceRegistrationLib
+  DebugLib
+
+[Depex]
+  TRUE

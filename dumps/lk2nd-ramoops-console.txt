@@ -1,0 +1,9 @@
+﻿fastboot.exe : FAILED (AdbWriteEndpointSync failed: 信号灯超时时间已到 (121))
+所在位置 行:5 字符: 6
++ $c = & $fb oem ramoops console 2>&1 | Out-String
++      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAILED (AdbWrit...号灯超时时间已到 (121)):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+fastboot: error: Command failed
+
